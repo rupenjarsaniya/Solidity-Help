@@ -6,19 +6,6 @@
 	"output": {
 		"abi": [
 			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "timestamp",
-						"type": "uint256"
-					}
-				],
-				"name": "Console",
-				"type": "event"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -26,46 +13,25 @@
 						"type": "address"
 					}
 				],
-				"name": "balances",
+				"name": "voters",
 				"outputs": [
 					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "deposit",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [
+						"internalType": "bool",
+						"name": "voted",
+						"type": "bool"
+					},
 					{
 						"internalType": "address",
-						"name": "",
+						"name": "delegate",
 						"type": "address"
 					}
 				],
-				"name": "locktime",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
 				"stateMutability": "view",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "withdrawn",
+				"name": "voting",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -84,7 +50,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/117.sol": "Main"
+			"contracts/118.sol": "Main"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -98,12 +64,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/117.sol": {
-			"keccak256": "0x0db4d17bae5ae1f3f2977a5019826e1744f8e6b34e4bd3ec83db54b72be94ee3",
+		"contracts/118.sol": {
+			"keccak256": "0x8ef17dc8381d4dd144e79f0cc7457bc96f61cde31477926695b73f4bd1568f60",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ac122b156fedc857fe9302bb0ba28d48ed8693d59de23ec17950e7d2e15e18fd",
-				"dweb:/ipfs/Qmd1KQQ86niF5PU1oyEJGPzW5ttJAiiqNQaB4CYcUnzeFS"
+				"bzz-raw://ee4b7615e3ea437e869946f0300dbd269306ddbb360d88fa8b7d52f883c422f0",
+				"dweb:/ipfs/QmZGfuiXFM6V7tmEWjbjYiyrQqw7tbnuCQzUPACzcvbjCY"
 			]
 		}
 	},

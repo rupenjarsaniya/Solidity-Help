@@ -8,19 +8,21 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "checkBalance",
+				"outputs": [
+					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "withdraw",
-				"outputs": [],
-				"stateMutability": "payable",
+				"stateMutability": "view",
 				"type": "function"
-			},
-			{
-				"stateMutability": "payable",
-				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -36,7 +38,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/115.sol": "Main"
+			"contracts/116.sol": "Main"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -50,12 +52,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/115.sol": {
-			"keccak256": "0xb117b37e8fcc26c9ba899ec52fe51d8dc8b6c18b0b842dcf06a731698f9de2a8",
+		"contracts/116.sol": {
+			"keccak256": "0xa25ed3f1b84276751ecbaa54e9a023fb122100581789a97482a5464b02ee140d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://10d8a3e0e170bb46be0ac8db336940d0b34ec97074543b20f74776b1e09476e9",
-				"dweb:/ipfs/QmRAqsJfQ3BWDnyDvBBd7pQ4MtsWMTjyLcBDRmN33FZGs3"
+				"bzz-raw://e9c379ee12c013de832f420eae3f99140299cd53d35fa8873b9fda3431d9b42d",
+				"dweb:/ipfs/QmNtwzZnHL2edJk8aBuGVkVHpKHU7YcJNfqFNH7abUGBsm"
 			]
 		}
 	},

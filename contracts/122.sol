@@ -7,11 +7,11 @@ where funds can be released only with the approval of multiple addresses.*/
 contract MultiSign {
     address public owner;
     uint256 private transactionIdx;
-    uint256 private numOfSignatureRequired;
 
     uint256[] public pendingTransactions;
 
     mapping(address => bool) public owners;
+    mapping(address => uint256) public funds;
 
     struct Transaction {
         address from;
@@ -19,6 +19,7 @@ contract MultiSign {
         uint256 amount;
         bool isConfirm;
         uint256 signatureCount;
+        uint256 numOfSignatureRequired;
     }
 
     mapping(uint256 => mapping(address => bool)) signatures;
@@ -37,9 +38,8 @@ contract MultiSign {
     );
 
     // Constructor
-    constructor(uint256 _numOfSignatureRequired) {
+    constructor() {
         owner = msg.sender;
-        numOfSignatureRequired = _numOfSignatureRequired;
     }
 
     // Modifiers
@@ -69,12 +69,17 @@ contract MultiSign {
 
     // Deposit funds
     receive() external payable {
+        funds[msg.sender] += msg.value;
         emit DepositFunds(msg.sender, msg.value);
     }
 
     // Create Transaction
-    function tranferTo(address _to, uint256 _amount) public validOwner {
-        require(address(this).balance >= _amount, "Not enought balance");
+    function tranferTo(
+        address _to,
+        uint256 _amount,
+        uint256 _numOfSignatureRequired
+    ) public validOwner {
+        require(funds[msg.sender] >= _amount, "Not enought balance");
 
         uint256 transactionId = transactionIdx++;
 
@@ -83,7 +88,8 @@ contract MultiSign {
             to: _to,
             amount: _amount,
             isConfirm: false,
-            signatureCount: 0
+            signatureCount: 0,
+            numOfSignatureRequired: _numOfSignatureRequired
         });
 
         pendingTransactions.push(transactionId);
@@ -135,15 +141,17 @@ contract MultiSign {
         emit TransactionSigned(msg.sender, _transactionId);
 
         // release payment
-        if (transaction.signatureCount >= numOfSignatureRequired) {
+        if (transaction.signatureCount >= transaction.numOfSignatureRequired) {
             require(
-                address(this).balance >= transaction.amount,
+                funds[transaction.from] >= transaction.amount,
                 "Not enought fund"
             );
 
             payable(transaction.to).transfer(transaction.amount);
 
             transactions[_transactionId].isConfirm = true;
+
+            funds[transaction.from] = 0;
 
             emit TransactionCompleted(
                 transaction.from,
@@ -157,7 +165,7 @@ contract MultiSign {
     }
 
     // Delete transaction
-    function deleteTransaction(uint256 _transactionId) public validOwner {
+    function deleteTransaction(uint256 _transactionId) private validOwner {
         require(
             transactions[_transactionId].isConfirm,
             "Transaction must exist"

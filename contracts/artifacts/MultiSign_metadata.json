@@ -6,13 +6,7 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_numOfSignatureRequired",
-						"type": "uint256"
-					}
-				],
+				"inputs": [],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
@@ -145,14 +139,20 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "funds",
+				"outputs": [
+					{
 						"internalType": "uint256",
-						"name": "_transactionId",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "deleteTransaction",
-				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -190,6 +190,11 @@
 							{
 								"internalType": "uint256",
 								"name": "signatureCount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "numOfSignatureRequired",
 								"type": "uint256"
 							}
 						],
@@ -302,6 +307,11 @@
 						"internalType": "uint256",
 						"name": "_amount",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_numOfSignatureRequired",
+						"type": "uint256"
 					}
 				],
 				"name": "tranferTo",
@@ -343,6 +353,11 @@
 						"internalType": "uint256",
 						"name": "signatureCount",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "numOfSignatureRequired",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -381,11 +396,11 @@
 	},
 	"sources": {
 		"contracts/122.sol": {
-			"keccak256": "0xd3d89ff35e43333053a41cb908c1183586d7f85e69852f6bc75de0d53208f555",
+			"keccak256": "0x8555611b48b9bc9cb9caea67773980b2e3759a5d7a576750d0fb3ea4fb3200bb",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f651434c2f4c9b7d91bb69b7ad82660da7a9fcca250b7abe88582c9719aac84a",
-				"dweb:/ipfs/QmU5jdHimheM3k4taZK3iN9jdMpPpspMnRaUDUS92bdB3K"
+				"bzz-raw://ef0accfe2c3813b64b180cf7c253340aeaf272136e595a087282b13e4427afe2",
+				"dweb:/ipfs/QmdnFb8BjbKNQTmminh5CmFTe22uTRyHqYyPoXNm8nuDtE"
 			]
 		}
 	},

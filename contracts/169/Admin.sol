@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+// Write a Solidity function to implement a decentralized ride-sharing platform, where users can find and offer rides without relying on a centralized platform.
 contract Admin {
     struct UserData {
         address ethAddress;

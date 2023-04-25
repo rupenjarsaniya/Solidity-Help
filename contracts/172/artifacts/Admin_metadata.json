@@ -6,6 +6,48 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "UserDetail",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "ethAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "enum Admin.Role",
+						"name": "role",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "admin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -13,12 +55,12 @@
 						"type": "address"
 					}
 				],
-				"name": "checkUser",
+				"name": "getRole",
 				"outputs": [
 					{
-						"internalType": "bool",
+						"internalType": "uint256",
 						"name": "",
-						"type": "bool"
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -42,9 +84,9 @@
 								"type": "address"
 							},
 							{
-								"internalType": "string",
-								"name": "name",
-								"type": "string"
+								"internalType": "enum Admin.Role",
+								"name": "role",
+								"type": "uint8"
 							}
 						],
 						"internalType": "struct Admin.UserData",
@@ -58,38 +100,14 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "_name",
-						"type": "string"
+						"internalType": "uint256",
+						"name": "_usertype",
+						"type": "uint256"
 					}
 				],
-				"name": "register",
+				"name": "userRegister",
 				"outputs": [],
 				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "users",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "ethAddress",
-						"type": "address"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -106,7 +124,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/169/Admin.sol": "Admin"
+			"contracts/172/Admin.sol": "Admin"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -120,12 +138,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/169/Admin.sol": {
-			"keccak256": "0x6d338a467fbc6b753293a2fb441e41b2ed1a29dcbffeaca158736e375d20682b",
+		"contracts/172/Admin.sol": {
+			"keccak256": "0x588e768ac24efc569aef245ff858c28763a8d2077eb06e826eec475c2b2fda30",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://378e846ed072682b5688d4164d3f31051f15d6190c593ca29b27225defe1ac04",
-				"dweb:/ipfs/QmUmV11QmmxLLvaC9TaEz9HcMtKeyowq9sFkdYKdgQKjVL"
+				"bzz-raw://3b0b4627c0b1504da6edefc3eab2f772480cc5f9c0579d840333cdfe0b442cb9",
+				"dweb:/ipfs/QmUYh6AbgXSLoA63PXJx6Va3wC6fzH2eTAo4r1UkBA3ZGp"
 			]
 		}
 	},

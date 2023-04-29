@@ -1,0 +1,388 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract Admin",
+						"name": "_adminAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "adminContract",
+				"outputs": [
+					{
+						"internalType": "contract Admin",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_from",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_to",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_kilometers",
+						"type": "uint256"
+					}
+				],
+				"name": "bookRide",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "booked",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "bookings",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "bookingId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "from",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "to",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "kilometers",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "fare",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "passengerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "enum Main.Passenger_Status",
+						"name": "status",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bool",
+						"name": "isConfirm",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "cancelRide",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "confirmRide",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "confirmation",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "OTP",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "driverAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "dropPassenger",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "getCurrentRide",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "bookingId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "from",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "to",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "kilometers",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "fare",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "passengerAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "enum Main.Passenger_Status",
+								"name": "status",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "isConfirm",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Main.BookingData",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "getHistoryRide",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "history",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "onService",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_otp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "pickPassenger",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/172/Main.sol": "Main"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/172/Admin.sol": {
+			"keccak256": "0x588e768ac24efc569aef245ff858c28763a8d2077eb06e826eec475c2b2fda30",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3b0b4627c0b1504da6edefc3eab2f772480cc5f9c0579d840333cdfe0b442cb9",
+				"dweb:/ipfs/QmUYh6AbgXSLoA63PXJx6Va3wC6fzH2eTAo4r1UkBA3ZGp"
+			]
+		},
+		"contracts/172/Main.sol": {
+			"keccak256": "0x314352a91cda54c76f5a0a0d72619c1dc046b95ed7d99bab6cd0fbe7c394e44c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://142df7e941ebf9ebfd45c1309f5ef6c8b8128acb6e437a864e09ec7ac92e715c",
+				"dweb:/ipfs/QmcCs5EC8qJqbq14GYcMMNBDjcPzrTbQFdxdHtFhpPM8yB"
+			]
+		}
+	},
+	"version": 1
+}

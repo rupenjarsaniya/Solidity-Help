@@ -1,0 +1,137 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract JobHandler",
+						"name": "jobHandlerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "contract Controller",
+						"name": "authAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "companyAddress",
+						"type": "address"
+					}
+				],
+				"name": "applyForJob",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "companyAddress",
+						"type": "address"
+					}
+				],
+				"name": "getApplicationByJobId",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "applierAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "companyAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "enum JobHandler.Status",
+								"name": "status",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct JobHandler.ApplicationData",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/JobMarketplace/JobApplication.sol": "JobApplication"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/JobMarketplace/Controller.sol": {
+			"keccak256": "0xc51c44ec693ab308f9a9e57825eb6d92424a0230bad33aa6e947e5d27c80448e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c2727ecf0be4019ef1d287d4070d699af4a34088ec838f634581db703c91f9af",
+				"dweb:/ipfs/QmUy33uGP2aYQ78Wo85V7k5Eo9FgxPQMcy63R3cifFe22R"
+			]
+		},
+		"contracts/JobMarketplace/JobApplication.sol": {
+			"keccak256": "0xcccf26ca3f5fe9b5622b5b5adb5dd5a2e80599d61be80bb3e0f075cafc8fa7b1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ce0ceeee13109c20cdc992d1570d56ed70a189458cf0c3b4175b30dfd42405e7",
+				"dweb:/ipfs/QmdPpyAHRbrxv8aQ3VnMhFPtmv4sHXSuBfaQsFNY5TsyQP"
+			]
+		},
+		"contracts/JobMarketplace/JobHandler.sol": {
+			"keccak256": "0x1e0aaaca1ac75cfd274a27e1b666395e188321cbaf18f1cab9361aa120192ee0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://70db81c88257389e4dba265285b5493b9459c0849e4060a9f9b311b70b20ddef",
+				"dweb:/ipfs/QmdSkHKBkHJGYKnzSkzhqqWtBV1AdhLeqLVrmGsbgGT3Gq"
+			]
+		}
+	},
+	"version": 1
+}

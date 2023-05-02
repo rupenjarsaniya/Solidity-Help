@@ -1,0 +1,713 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "ethAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "employees",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "headQuarter",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "website",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string[]",
+						"name": "technologies",
+						"type": "string[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "since",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"name": "RegisterCompany",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "ethAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "linkedin",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "twitter",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "github",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "medium",
+								"type": "string"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct Controller.SocialLinks",
+						"name": "socialLinks",
+						"type": "tuple"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "collegeName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "degree",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "grade",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "passingYear",
+								"type": "uint256"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct Controller.Education[]",
+						"name": "education",
+						"type": "tuple[]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "companyName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "location",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "designation",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "currentLPA",
+								"type": "string"
+							},
+							{
+								"internalType": "string[]",
+								"name": "technologies",
+								"type": "string[]"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct Controller.WorkExperience[]",
+						"name": "workExperience",
+						"type": "tuple[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "string[]",
+						"name": "resume",
+						"type": "string[]"
+					}
+				],
+				"name": "RegisterUser",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"name": "UpdateDescription",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "employees",
+						"type": "uint256"
+					}
+				],
+				"name": "UpdateEmployees",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "headQuarter",
+						"type": "string"
+					}
+				],
+				"name": "UpdateHeadQuarter",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string[]",
+						"name": "technologies",
+						"type": "string[]"
+					}
+				],
+				"name": "UpdateTechnologies",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "website",
+						"type": "string"
+					}
+				],
+				"name": "UpdateWebsite",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "resume",
+						"type": "string"
+					}
+				],
+				"name": "addResume",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "checkUser",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "deleteResume",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "getCompany",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "ethAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "employees",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "headQuarter",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "website",
+								"type": "string"
+							},
+							{
+								"internalType": "string[]",
+								"name": "technologies",
+								"type": "string[]"
+							},
+							{
+								"internalType": "uint256",
+								"name": "since",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "description",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Controller.CompanyData",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "getUser",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "linkedin",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "twitter",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "github",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "medium",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Controller.SocialLinks",
+						"name": "",
+						"type": "tuple"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "collegeName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "degree",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "grade",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "passingYear",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Controller.Education[]",
+						"name": "",
+						"type": "tuple[]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "companyName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "location",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "designation",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "currentLPA",
+								"type": "string"
+							},
+							{
+								"internalType": "string[]",
+								"name": "technologies",
+								"type": "string[]"
+							}
+						],
+						"internalType": "struct Controller.WorkExperience[]",
+						"name": "",
+						"type": "tuple[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "employees",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "headQuarter",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "website",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "technologies",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "since",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"name": "registerCompany",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "linkedin",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "twitter",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "github",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "medium",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Controller.SocialLinks",
+						"name": "socialLinks",
+						"type": "tuple"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "collegeName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "degree",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "grade",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "passingYear",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Controller.Education[]",
+						"name": "education",
+						"type": "tuple[]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "companyName",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "location",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "designation",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "currentLPA",
+								"type": "string"
+							},
+							{
+								"internalType": "string[]",
+								"name": "technologies",
+								"type": "string[]"
+							}
+						],
+						"internalType": "struct Controller.WorkExperience[]",
+						"name": "workExperience",
+						"type": "tuple[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "resume",
+						"type": "string[]"
+					}
+				],
+				"name": "registerUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"name": "updateDescription",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "employees",
+						"type": "uint256"
+					}
+				],
+				"name": "updateEmployees",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "headQuarter",
+						"type": "string"
+					}
+				],
+				"name": "updateHeadQuarter",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string[]",
+						"name": "technologies",
+						"type": "string[]"
+					}
+				],
+				"name": "updateTechnologies",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "website",
+						"type": "string"
+					}
+				],
+				"name": "updateWesbite",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/JobMarketplace/Controller.sol": "Controller"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/JobMarketplace/Controller.sol": {
+			"keccak256": "0xc51c44ec693ab308f9a9e57825eb6d92424a0230bad33aa6e947e5d27c80448e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c2727ecf0be4019ef1d287d4070d699af4a34088ec838f634581db703c91f9af",
+				"dweb:/ipfs/QmUy33uGP2aYQ78Wo85V7k5Eo9FgxPQMcy63R3cifFe22R"
+			]
+		}
+	},
+	"version": 1
+}

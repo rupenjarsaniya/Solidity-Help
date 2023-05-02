@@ -1,0 +1,648 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract Controller",
+						"name": "controllerAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "status",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "applier",
+						"type": "address"
+					}
+				],
+				"name": "ApplicationStatus",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "applier",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "companyAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					}
+				],
+				"name": "ApplyNow",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "companyAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isOpen",
+						"type": "bool"
+					}
+				],
+				"name": "CloseJob",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "applier",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "companyAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "url",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					}
+				],
+				"name": "GenerateOfferLetter",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "companyAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum JobHandler.Experience",
+						"name": "experience",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "string[]",
+						"name": "technologies",
+						"type": "string[]"
+					}
+				],
+				"name": "PostJob",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "status",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "applier",
+						"type": "address"
+					}
+				],
+				"name": "applicationStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "applier",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "companyAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					}
+				],
+				"name": "applyNow",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					}
+				],
+				"name": "closeJob",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "url",
+						"type": "string"
+					}
+				],
+				"name": "generateOfferLetter",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					}
+				],
+				"name": "getAllApplicationsByJobId",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "applierAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "companyAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "enum JobHandler.Status",
+								"name": "status",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct JobHandler.ApplicationData[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "companyAddress",
+						"type": "address"
+					}
+				],
+				"name": "getAllJobs",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "companyAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "title",
+								"type": "string"
+							},
+							{
+								"internalType": "enum JobHandler.Experience",
+								"name": "experience",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string[]",
+								"name": "technologies",
+								"type": "string[]"
+							},
+							{
+								"internalType": "bool",
+								"name": "isOpen",
+								"type": "bool"
+							},
+							{
+								"internalType": "string",
+								"name": "salary",
+								"type": "string"
+							},
+							{
+								"internalType": "enum JobHandler.Schedule",
+								"name": "schedule",
+								"type": "uint8"
+							},
+							{
+								"internalType": "enum JobHandler.JobType",
+								"name": "jobType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "enum JobHandler.JobMode",
+								"name": "jobMode",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string[]",
+								"name": "qualifications",
+								"type": "string[]"
+							},
+							{
+								"internalType": "uint256",
+								"name": "vacancy",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "highestEducation",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct JobHandler.JobData[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "applierAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "companyAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					}
+				],
+				"name": "getApplicationByJobId",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "applierAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "companyAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "enum JobHandler.Status",
+								"name": "status",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct JobHandler.ApplicationData",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "applierAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "companyAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					}
+				],
+				"name": "getApplicationStatus",
+				"outputs": [
+					{
+						"internalType": "enum JobHandler.Status",
+						"name": "",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "companyAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					}
+				],
+				"name": "getJobById",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "companyAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "title",
+								"type": "string"
+							},
+							{
+								"internalType": "enum JobHandler.Experience",
+								"name": "experience",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string[]",
+								"name": "technologies",
+								"type": "string[]"
+							},
+							{
+								"internalType": "bool",
+								"name": "isOpen",
+								"type": "bool"
+							},
+							{
+								"internalType": "string",
+								"name": "salary",
+								"type": "string"
+							},
+							{
+								"internalType": "enum JobHandler.Schedule",
+								"name": "schedule",
+								"type": "uint8"
+							},
+							{
+								"internalType": "enum JobHandler.JobType",
+								"name": "jobType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "enum JobHandler.JobMode",
+								"name": "jobMode",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string[]",
+								"name": "qualifications",
+								"type": "string[]"
+							},
+							{
+								"internalType": "uint256",
+								"name": "vacancy",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "highestEducation",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct JobHandler.JobData",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					}
+				],
+				"name": "getOfferLetter",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "experience",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string[]",
+						"name": "technologies",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string",
+						"name": "salary",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "schedule",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "jobType",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "jobMode",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string[]",
+						"name": "qualifications",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "vacancy",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "highestEducation",
+						"type": "string"
+					}
+				],
+				"name": "postJob",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/JobMarketplace/JobHandler.sol": "JobHandler"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/JobMarketplace/Controller.sol": {
+			"keccak256": "0xc51c44ec693ab308f9a9e57825eb6d92424a0230bad33aa6e947e5d27c80448e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c2727ecf0be4019ef1d287d4070d699af4a34088ec838f634581db703c91f9af",
+				"dweb:/ipfs/QmUy33uGP2aYQ78Wo85V7k5Eo9FgxPQMcy63R3cifFe22R"
+			]
+		},
+		"contracts/JobMarketplace/JobHandler.sol": {
+			"keccak256": "0x1e0aaaca1ac75cfd274a27e1b666395e188321cbaf18f1cab9361aa120192ee0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://70db81c88257389e4dba265285b5493b9459c0849e4060a9f9b311b70b20ddef",
+				"dweb:/ipfs/QmdSkHKBkHJGYKnzSkzhqqWtBV1AdhLeqLVrmGsbgGT3Gq"
+			]
+		}
+	},
+	"version": 1
+}
